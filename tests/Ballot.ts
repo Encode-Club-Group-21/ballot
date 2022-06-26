@@ -89,7 +89,6 @@ describe("Ballot", function () {
   describe("when the voter interact with the vote function in the contract", function () {
     it("casts a vote", async function () {
       const proposalIndex  = 1;
-      const voterAddress = accounts[1].address;
       const tx = await ballotContract.vote(proposalIndex);
       await tx.wait();
       const proposal = await ballotContract.proposals(proposalIndex);
@@ -97,7 +96,7 @@ describe("Ballot", function () {
     });
   });
 
-  describe("when the voter interact with the delegate function in the contract", function () {
+  describe("when the voter interacts with the delegate function in the contract", function () {
     it("allow voter to delegate his/her vote", async function () {
       const voterAddress1 = accounts[1].address;
       const voterAddress2 = accounts[2].address;
@@ -109,17 +108,19 @@ describe("Ballot", function () {
     });
   }); 
 
-  describe("when the an attacker interact with the giveRightToVote function in the contract", function () {
-    // TODO
-    it("is not implemented", async function () {
-      throw new Error("Not implemented");
+  describe("when an attacker interacts with the giveRightToVote function in the contract", function () {
+    it("is doesn't allow someone who isn't the chairperson to give the right to vote to someone", async function () {
+      const voterAddress1 = accounts[1].address;
+      const voterAddress2 = accounts[2].address;
+      const tx = await ballotContract.giveRightToVote(voterAddress1);
+      await expect (ballotContract.connect(accounts[1]).giveRightToVote(voterAddress2)
+      ).to.be.revertedWith("Only chairperson can give right to vote.");
     });
   });
 
-  describe("when the an attacker interact with the vote function in the contract", function () {
-    // TODO
-    it("is not implemented", async function () {
-      throw new Error("Not implemented");
+  describe("when an attacker interacts with the vote function in the contract", function () {
+    it("it doesn't allow someone without a right to vote, to vote", async function () {
+      await expect (ballotContract.connect(accounts[1]).vote(2)).to.be.revertedWith("Has no right to vote");     
     });
   });
 
