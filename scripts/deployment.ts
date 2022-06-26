@@ -45,6 +45,7 @@ async function main() {
     convertStringArrayToBytes32(proposals)
   );
   console.log("Awaiting confirmations");
+  console.log(convertStringArrayToBytes32(proposals))
   await ballotContract.deployed();
   console.log("Completed");
   console.log(`Contract deployed at ${ballotContract.address}`);

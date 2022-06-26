@@ -87,18 +87,27 @@ describe("Ballot", function () {
   });
 
   describe("when the voter interact with the vote function in the contract", function () {
-    // TODO
-    it("is not implemented", async function () {
-      throw new Error("Not implemented");
+    it("casts a vote", async function () {
+      const proposalIndex  = 1;
+      const voterAddress = accounts[1].address;
+      const tx = await ballotContract.vote(proposalIndex);
+      await tx.wait();
+      const proposal = await ballotContract.proposals(proposalIndex);
+      expect(proposal.voteCount.toNumber()).to.eq(1);
     });
   });
 
   describe("when the voter interact with the delegate function in the contract", function () {
-    // TODO
-    it("is not implemented", async function () {
-      throw new Error("Not implemented");
+    it("allow voter to delegate his/her vote", async function () {
+      const voterAddress1 = accounts[1].address;
+      const voterAddress2 = accounts[2].address;
+      const tx = await ballotContract.giveRightToVote(voterAddress1);
+      const tx2 = await ballotContract.giveRightToVote(voterAddress2);
+      await expect(ballotContract.connect(voterAddress1).delegate(voterAddress2));
+      const voter = await ballotContract.voters(voterAddress2);
+      expect(voter.weight.toNumber()).to.eq(1);
     });
-  });
+  }); 
 
   describe("when the an attacker interact with the giveRightToVote function in the contract", function () {
     // TODO
