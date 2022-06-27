@@ -55,7 +55,7 @@ Hamburguer`
 
 #### code and output
 
-![code](https://github.com/jieunyoo/ballot/blob/main/screenshots/voteScreenshot.png)
+`npx ts-node scripts/vote.ts 0x38e642426b9de8e7dbd5c1939956f099a23e767f 1`
 
 <img src="https://github.com/jieunyoo/ballot/blob/main/screenshots/voteEtherscan.png" width="500">
 
@@ -96,4 +96,4 @@ Summary so far ...
 
 `npx ts-node scripts/delegateVote.ts 0x38e642426b9de8e7dbd5c1939956f099a23e767f 0x9f9E1b02f25FE6308c7B57e84D49d4386BB0Da42`
 
-<img src="https://github.com/jieunyoo/ballot/blob/main/screenshots/delegateViaScript.png" width="500">
+<img src="https://github.com/jieunyoo/ballot/blob/main/screenshots/delegateViaScript.png" width="1500">
