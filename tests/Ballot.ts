@@ -68,7 +68,7 @@ describe("Ballot", function () {
       expect(voter.weight.toNumber()).to.eq(1);
     });
 
-    it("can not give right to vote for someone that has voted", async function () {
+    it("can not give right to vote to someone that has voted", async function () {
       const voterAddress = accounts[1].address;
       await giveRightToVote(ballotContract, voterAddress);
       await ballotContract.connect(accounts[1]).vote(0);
@@ -77,7 +77,7 @@ describe("Ballot", function () {
       ).to.be.revertedWith("The voter already voted.");
     });
 
-    it("can not give right to vote for someone that already has voting rights", async function () {
+    it("can not give right to vote to someone that already has voting rights", async function () {
       const voterAddress = accounts[1].address;
       await giveRightToVote(ballotContract, voterAddress);
       await expect(
@@ -86,7 +86,7 @@ describe("Ballot", function () {
     });
   });
 
-  describe("when the voter interact with the vote function in the contract", function () {
+  describe("when the voter interacts with the vote function in the contract", function () {
     it("casts a vote", async function () {
       const proposalIndex  = 1;
       const tx = await ballotContract.vote(proposalIndex);
@@ -109,7 +109,7 @@ describe("Ballot", function () {
   }); 
 
   describe("when an attacker interacts with the giveRightToVote function in the contract", function () {
-    it("is doesn't allow someone who isn't the chairperson to give the right to vote to someone", async function () {
+    it("it doesn't allow someone who isn't the chairperson to give the right to vote to someone", async function () {
       const voterAddress1 = accounts[1].address;
       const voterAddress2 = accounts[2].address;
       const tx = await ballotContract.giveRightToVote(voterAddress1);
@@ -124,21 +124,21 @@ describe("Ballot", function () {
     });
   });
 
-  describe("when the an attacker interact with the delegate function in the contract", function () {
+  describe("when an attacker interacts with the delegate function in the contract", function () {
+    it("it doesn't allow an attacker to delegate voting privileges", async function () {
+      
+      throw new Error("Not implemented");
+    });
+  });
+
+  describe("when someone interacts with the winningProposal function before any votes are cast", function () {
     // TODO
     it("is not implemented", async function () {
       throw new Error("Not implemented");
     });
   });
 
-  describe("when someone interact with the winningProposal function before any votes are cast", function () {
-    // TODO
-    it("is not implemented", async function () {
-      throw new Error("Not implemented");
-    });
-  });
-
-  describe("when someone interact with the winningProposal function after one vote is cast for the first proposal", function () {
+  describe("when someone interacts with the winningProposal function after one vote is cast for the first proposal", function () {
     // TODO
     it("is not implemented", async function () {
       throw new Error("Not implemented");
