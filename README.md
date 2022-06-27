@@ -71,9 +71,10 @@ Hamburguer`
 - contract address: 0x38e642426b9de8e7dbd5c1939956f099a23e767f
 - chairperson address: 0xb99404011f03c4913d8d5d6d6a567960a87aa352
 
-Methods
+Summary so far ...
 - chairperson gave right to vote to: 0x82867D7Ecf15Bb63D626904802D831b9bDbFD0b5
 - also did another transaction where chairperson gave right to vote to: 0x9f9E1b02f25FE6308c7B57e84D49d4386BB0Da42
+- and another right to vote to: 0x332CB795369d64E1af9Bad9785e10477360c3443 and to 0x8a13f3c95168bD99935514F14679dC746B45c37B
 - then, via etherscan, 0x9f9E1b02f25FE6308c7B57e84D49d4386BB0Da42 delegated vote to: 0x82867D7Ecf15Bb63D626904802D831b9bDbFD0b5
 - (the chairperson) 0xb99404011f03c4913d8d5d6d6a567960a87aa352 voted for: proposal 1
 
@@ -89,3 +90,10 @@ Methods
 
 <img src="https://github.com/jieunyoo/ballot/blob/main/screenshots/gotVoteDelegatedTo.png" width="500">
 
+# delegate via script
+
+- 0x82867D7Ecf15Bb63D626904802D831b9bDbFD0b5 delegated a vote to 0x9f9E1b02f25FE6308c7B57e84D49d4386BB0Da42
+
+`npx ts-node scripts/delegateVote.ts 0x38e642426b9de8e7dbd5c1939956f099a23e767f 0x9f9E1b02f25FE6308c7B57e84D49d4386BB0Da42`
+
+<img src="https://github.com/jieunyoo/ballot/blob/main/screenshots/delegateViaScript.png" width="500">
