@@ -49,5 +49,14 @@ Pizza
 
 Cake
 
-Hamburguer
+Hamburguer`
+
+# voting
+
+#### code and output
+
+![code](https://github.com/jieunyoo/ballot/blob/main/screenshots/voteScreenshot.png)
+
+
+![etherscan](https://github.com/jieunyoo/ballot/blob/main/screenshots/voteEtherscan.png)
 
