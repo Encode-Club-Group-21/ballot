@@ -33,3 +33,21 @@ Transaction completed.
 
 Hash: 0x53c6eca59101a92d6c9eeeee2581313093adb06d67ab70f9808a4ef7e96d16b7
 
+# query proposals
+
+`npx ts-node scripts/query.ts 0x38e642426B9De8e7dBd5C1939956F099a23E767f`
+
+### output
+
+Using address 0xB99404011F03c4913d8d5D6D6A567960a87AA352
+
+Wallet balance 19.98314190492133
+
+Querying proposal
+
+Pizza
+
+Cake
+
+Hamburguer
+
