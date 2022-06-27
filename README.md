@@ -64,3 +64,27 @@ Hamburguer`
 
 #### code
 ![code](https://github.com/jieunyoo/ballot/blob/main/screenshots/queryVotes.png)
+
+
+# additional votes given
+
+- contract address: 0x38e642426b9de8e7dbd5c1939956f099a23e767f
+- chairperson address: 0xb99404011f03c4913d8d5d6d6a567960a87aa352
+
+Methods
+- chairperson gave right to vote to: 0x82867D7Ecf15Bb63D626904802D831b9bDbFD0b5
+- also did another transaction where chairperson gave right to vote to: 0x9f9E1b02f25FE6308c7B57e84D49d4386BB0Da42
+- then, via etherscan, 0x9f9E1b02f25FE6308c7B57e84D49d4386BB0Da42 delegated vote to: 0x82867D7Ecf15Bb63D626904802D831b9bDbFD0b5
+- (the chairperson) 0xb99404011f03c4913d8d5d6d6a567960a87aa352 voted for: proposal 1
+
+#### successful delegation 
+
+- 0x82867D7Ecf15Bb63D626904802D831b9bDbFD0b5's vote weight changed to 2.
+
+![etherscan](https://github.com/jieunyoo/ballot/blob/main/screenshots/delegatedVote.png)
+
+
+- 0x9f9E1b02f25FE6308c7B57e84D49d4386BB0Da42's info. now shows that it voted and delegated its vote
+
+![etherscan](https://github.com/jieunyoo/ballot/blob/main/screenshots/gotVoteDelegatedTo.png)
+
