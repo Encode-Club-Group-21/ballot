@@ -60,3 +60,7 @@ Hamburguer`
 
 ![etherscan](https://github.com/jieunyoo/ballot/blob/main/screenshots/voteEtherscan.png)
 
+# query votes
+
+#### code
+![code](https://github.com/jieunyoo/ballot/blob/main/screenshots/queryVotes.png)
