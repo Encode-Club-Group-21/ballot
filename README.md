@@ -57,8 +57,8 @@ Hamburguer`
 
 ![code](https://github.com/jieunyoo/ballot/blob/main/screenshots/voteScreenshot.png)
 
+<img src="https://github.com/jieunyoo/ballot/blob/main/screenshots/voteEtherscan.png" width="500">
 
-![etherscan](https://github.com/jieunyoo/ballot/blob/main/screenshots/voteEtherscan.png)
 
 # query votes
 
@@ -77,14 +77,15 @@ Methods
 - then, via etherscan, 0x9f9E1b02f25FE6308c7B57e84D49d4386BB0Da42 delegated vote to: 0x82867D7Ecf15Bb63D626904802D831b9bDbFD0b5
 - (the chairperson) 0xb99404011f03c4913d8d5d6d6a567960a87aa352 voted for: proposal 1
 
-#### successful delegation 
+## successful delegation - part 1
 
 - 0x82867D7Ecf15Bb63D626904802D831b9bDbFD0b5's vote weight changed to 2.
 
-![etherscan](https://github.com/jieunyoo/ballot/blob/main/screenshots/delegatedVote.png)
+<img src="https://github.com/jieunyoo/ballot/blob/main/screenshots/delegatedVote.png" width="500">
 
+## successful delegation - part 2
 
 - 0x9f9E1b02f25FE6308c7B57e84D49d4386BB0Da42's info. now shows that it voted and delegated its vote
 
-![etherscan](https://github.com/jieunyoo/ballot/blob/main/screenshots/gotVoteDelegatedTo.png)
+<img src="https://github.com/jieunyoo/ballot/blob/main/screenshots/gotVoteDelegatedTo.png" width="500">
 
