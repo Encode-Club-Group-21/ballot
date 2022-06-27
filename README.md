@@ -92,8 +92,24 @@ Summary so far ...
 
 # delegate via script
 
-- 0x82867D7Ecf15Bb63D626904802D831b9bDbFD0b5 delegated a vote to 0x9f9E1b02f25FE6308c7B57e84D49d4386BB0Da42
+- 0x8a13f3c95168bD99935514F14679dC746B45c37B delegated a vote to 0x9f9E1b02f25FE6308c7B57e84D49d4386BB0Da42
 
 `npx ts-node scripts/delegateVote.ts 0x38e642426b9de8e7dbd5c1939956f099a23e767f 0x9f9E1b02f25FE6308c7B57e84D49d4386BB0Da42`
 
 <img src="https://github.com/jieunyoo/ballot/blob/main/screenshots/delegateViaScript.png" width="1500">
+
+# more votes
+
+-  voted for proposal 2
+
+`npx ts-node scripts/queryVoting.ts 0x38e642426B9De8e7dBd5C1939956F099a23E767f`
+
+<img src="https://github.com/jieunyoo/ballot/blob/main/screenshots/queryVoteAgain.png" width="1500">
+
+- the outcome makes senses
+- the chairperson voted for proposal 1
+- 0x82867D7Ecf15Bb63D626904802D831b9bDbFD0b5 voted for proposal 2
+- two addresses delegated their vote to: 0x82867d7ecf15bb63d626904802d831b9bdbfd0b5
+  - 0x9f9E1b02f25FE6308c7B57e84D49d4386BB0Da42 gave vote to 0x82867d7ecf15bb63d626904802d831b9bdbfd0b5
+  - 0x8a13f3c95168bD99935514F14679dC746B45c37B delegated a vote to 0x9f9E1b02f25FE6308c7B57e84D49d4386BB0Da42, but 0x9f9E1b02f25FE6308c7B57e84D49d4386BB0Da42 had already delegated its vote to 0x82867d7ecf15bb63d626904802d831b9bdbfd0b5, so that means that 0x82867d7ecf15bb63d626904802d831b9bdbfd0b5 got two votes delegated to it
+  - 0x82867d7ecf15bb63d626904802d831b9bdbfd0b5 had its vote, plus the two votes delegated to it, so in total, had 3 votes, and proposal 2 got 3 votes.
