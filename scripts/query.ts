@@ -31,31 +31,30 @@ async function main() {
     throw new Error("Not enough ether");
   }
   
-
-
-
-  //code for the voting is below
-  console.log("voting for a proposal now!");
+  //code for the query is below
+  console.log("Querying proposals");
   
   //this is the contract address (to be input on the command line)
   const ballotAddress = process.argv[2];
-  const proposalVoteNumber = process.argv[3];
-
 
   //need to get the contract information
- const ballotContract: Ballot = new Contract(
-  ballotAddress,
-  ballotJson.abi,
-  signer
-) as Ballot;
+  const ballotContract: Ballot = new Contract(
+    ballotAddress,
+    ballotJson.abi,
+    signer
+  ) as Ballot;
 
-  const tx = await ballotContract.vote(proposalVoteNumber);
-  console.log("Awaiting confirmations");
-  await tx.wait();
-  console.log(`Transaction completed. Hash: ${tx.hash}`);
- }
 
- 
+ //there are just 3 proposals - i want to just query them.....
+  let i = 0;
+  for (i = 0; i < 3; i++) {
+    const proposalName = await ballotContract.proposals(i);
+    console.log(ethers.utils.parseBytes32String(proposalName[0]));
+   };
+
+  }
+
+
 main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
